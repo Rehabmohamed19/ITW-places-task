@@ -1,131 +1,86 @@
-
+// data
 
 let data = [{
 	title: "EGYPT TANGBIA",
 	cardDesc: "Denatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (5).png"
+	imageSrc: "./images/MicrosoftTeams-image (5).png"
 },
 {
 	title: "OLLING PHISOTIP",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (3).png"
+	imageSrc: "./images/MicrosoftTeams-image (3).png"
 
 },
 {
 	title: "CORTIA DYNA",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (7).png"
+	imageSrc: "./images/MicrosoftTeams-image (7).png"
 
 },
 {
 	title: "EGYPT TANGBIA",
 	cardDesc: "Denatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (11).png"
+	imageSrc: "./images/MicrosoftTeams-image (11).png"
 
 },
 {
 	title: "OLLING PHISOTIP",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (4).png"
+	imageSrc: "./images/MicrosoftTeams-image (4).png"
 
 },
 {
 	title: "CORTIA DYNA",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (9).png"
+	imageSrc: "./images/MicrosoftTeams-image (9).png"
 
 },
 {
 	title: "EGYPT TANGBIA",
 	cardDesc: "Denatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (6).png"
+	imageSrc: "./images/MicrosoftTeams-image (6).png"
 
 },
 {
 	title: "OLLING PHISOTIP",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (12).png"
+	imageSrc: "./images/MicrosoftTeams-image (12).png"
 
 },
 {
 	title: "OLLING PHISOTIP",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (1).png"
+	imageSrc: "./images/MicrosoftTeams-image (1).png"
 
 },
 {
 	title: "CORTIA DYNA",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (2).png"
+	imageSrc: "./images/MicrosoftTeams-image (2).png"
 
 },
 {
 	title: "EGYPT TANGBIA",
 	cardDesc: "Denatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image.png"
+	imageSrc: "./images/MicrosoftTeams-image.png"
 
 },
 {
 	title: "OLLING PHISOTIP",
 	cardDesc: "Penatibus et magnis dis parturient montes, nascetur ridiculus mus",
-	imageSrc: "./MicrosoftTeams-image (8).png"
+	imageSrc: "./images/MicrosoftTeams-image (8).png"
 
 },
 
 ];
 
 
-//   const bodywrapper = document.getElementsByClassName("body")[0];
-
-
 const rowWrapper = document.querySelector('.row-wrapper');
 
-// const modal = document.createElement("section");
-// modal.className = "modal hidden";
-// modal.innerHTML = `<div class="flex">
-//   <button class="btn-close">⨉</button>
-//   </div>
-//   <div>
-//   <h3></h3>
-//   <p>
-//   </p>
-//   </div>`;
-// document.body.append(modal);
 
-// const overlay = document.createElement("div");
-// overlay.className = "overlay hidden";
-// document.body.append(overlay);
-
-// const closebtn = document.querySelector(".modal .btn-close");
-
-// const openModal = function (e) {
-// 	const modalTitle = document.querySelector(".modal h3");
-// 	modalTitle.innerHTML = e.target.closest(".card").querySelector(".card-title").innerHTML;
-// 	const modalText = document.querySelector(".modal p");
-// 	const parent = e.target.closest(".row-wrapper")
-// 	const child = e.target.closest(".card");
-// 	const currentIndex = Array.prototype.indexOf.call(parent.children, child);
-// 	modalText.innerHTML = `${data[currentIndex].cardDesc}`;
-// 	modal.classList.remove("hidden");
-// 	overlay.classList.remove("hidden");
-// 	document.body.style.overflow = "hidden"
-
-
-// };
-
-// const closeModal = function () {
-// 	modal.classList.add("hidden");
-// 	overlay.classList.add("hidden");
-// 	document.body.style.overflow = "scroll"
-
-// };
-// closebtn.addEventListener("click", closeModal);
-
-
-// actual modal //
+// modal
 
 const closebtn = document.querySelector(".btn-close");
-// const cardButtons = document.querySelectorAll('.card');
 const overlay = document.querySelector('.overlay');
 const modal = document.querySelector('.modal');
 
@@ -135,9 +90,6 @@ function handleCardButtonClick(event) {
 	const imgSrc = card.querySelector('img').src;
 	const desc = card.querySelector('.card-text').innerHTML;
 	const title = card.querySelector('.card-title').textContent;
-
-	// cardButtons.forEach(button => button.addEventListener('click', handleCardButtonClick))
-
 
 	modal.innerHTML = 
 	`
@@ -175,6 +127,7 @@ const closeModal = function () {
 closebtn.addEventListener("click", closeModal);
 
 
+// cards creation
 
 for (let i = 0; i < data.length; i++) {
 
@@ -188,7 +141,6 @@ for (let i = 0; i < data.length; i++) {
 	col.appendChild(card);
 
 	const cardImage = document.createElement('img');
-	// cardImage.className = "card-img-top"
 	cardImage.src = `${data[i].imageSrc}`
 	card.appendChild(cardImage);
 
@@ -242,11 +194,3 @@ for (let i = 0; i < data.length; i++) {
 
 }
 
-//   const mini = document.querySelector(".mini");
-
-//   if (mini.innerText.length > 150) {
-// 	const newText2 = mini.innerText.substring(0, 150);
-// 	mini.innerText = newText2 + "...";
-//   } else {
-// 	mini.innerText = mini;
-//   }
